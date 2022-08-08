@@ -1,6 +1,14 @@
+import { CustomThemeProvider } from './hooks/theme'
+import { SignIn } from './pages/SignIn'
+
+import GlobalStyle from './styles/global'
+
 export function App() {
 
   return (
-    <div>Hello</div>
+    <CustomThemeProvider>
+      <GlobalStyle />
+      <SignIn />
+    </CustomThemeProvider>
   )
 }
