@@ -17,11 +17,6 @@ export const Container = styled.div`
     gap: 16px;
     font-size: 4.3rem;
     font-weight: 700;
-    margin: 0 auto;
-    
-    h1 {
-      inline-size: min-content;
-    }
   }
 
   form {
@@ -49,6 +44,23 @@ export const Container = styled.div`
       font-family: ${({ theme }) => theme.FF.secondary}
     }
   }
+
+  ${({ isMobile }) => {
+    return isMobile ?
+      `
+      & h1 {
+        inline-size: min-content;
+      }
+      `
+      :
+      `
+      flex-direction: row;
+      justify-content: space-around;
+      & > form {
+        padding: 6.4rem;
+      }
+      `
+  }}
 `
 
 export const InputWrapper = styled.div`
