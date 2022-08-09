@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { isMobile } from 'react-device-detect'
 
 import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
@@ -10,7 +11,7 @@ export function SignUp() {
   const onSubmit = data => console.log(data)
 
   return (
-    <Container>
+    <Container isMobile={isMobile}>
       <div>
         <Logo size={50} />
         <h1>food explorer</h1>
