@@ -48,7 +48,7 @@ export const Container = styled.div`
   ${({ isMobile }) => {
     return isMobile ?
       `
-      & > h1 {
+      & h1 {
         inline-size: min-content;
       }
       `
@@ -56,6 +56,9 @@ export const Container = styled.div`
       `
       flex-direction: row;
       justify-content: space-around;
+      & > form {
+        padding: 6.4rem;
+      }
       `
   }}
 `
