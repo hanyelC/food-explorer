@@ -37,12 +37,6 @@ export const Container = styled.div`
       font-weight: 500;
       font-family: ${({ theme }) => theme.FF.secondary}
     }
-    
-    & > span {
-      font-size: 1.4rem;
-      font-weight: 500;
-      font-family: ${({ theme }) => theme.FF.secondary}
-    }
   }
 
   ${({ isMobile }) => {
