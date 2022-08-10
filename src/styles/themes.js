@@ -3,7 +3,8 @@ export const dark = {
   colors: {
     BG: {
       primary: '#000A0F',
-      secondary: '#00111a',
+      secondary: '#00111A',
+      tertiary: '#0D1D25',
       btn: {
         primary: '#92000E',
       },
@@ -13,7 +14,8 @@ export const dark = {
     },
     text: {
       primary: '#FFF',
-      secondary: '#C4C4CC'
+      secondary: '#C4C4CC',
+      tertiary: '#7C7C8A'
     }
   },
   FF: {
@@ -29,6 +31,7 @@ export const light = {
     BG: {
       primary: '#FFF',
       secondary: '#FFF',
+      tertiary: '#FFF',
       btn: {
         primary: '#92000E',
       },
@@ -38,12 +41,12 @@ export const light = {
 
     },
     text: {
-      primary: '#FFF'
+      primary: '#000'
     },
-    FF: {
-      primary: '\'Roboto\', sans-serif',
-      secondary: '\'Poppins\', sans-serif',
-      tertiary: '\'DM Sans\', sans-serif'
-    },
+  },
+  FF: {
+    primary: '\'Roboto\', sans-serif',
+    secondary: '\'Poppins\', sans-serif',
+    tertiary: '\'DM Sans\', sans-serif'
   }
 }
