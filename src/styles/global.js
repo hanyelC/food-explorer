@@ -12,6 +12,7 @@ export default createGlobalStyle`
     outline: 0;
     font-family: sans-serif;
     font-size: 1em;
+    color: ${({ theme }) => theme.colors.text.primary};
   }
 
   button {
