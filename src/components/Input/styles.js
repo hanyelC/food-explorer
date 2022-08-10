@@ -13,6 +13,8 @@ export const Container = styled.div`
   
   padding: 1.2rem 1.4rem;
 
+  border: 1px solid transparent;
+
   & > input {
     font-weight: 400;
     font-size: 1.6rem;
@@ -33,5 +35,9 @@ export const Container = styled.div`
   & > svg {
     font-size: 2.4rem;
     color: ${({ theme }) => theme.colors.text.secondary};
-  } 
+  }
+
+  &:focus-within {
+    border: 1px solid #FFF
+  }
 `
