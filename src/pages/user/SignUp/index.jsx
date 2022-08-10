@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { isMobile } from 'react-device-detect'
 
-import { Button } from '../../components/Button'
-import { Logo } from '../../components/Logo'
-import { ButtonText } from '../../components/ButtonText'
+import { Button } from '../../../components/Button'
+import { Logo } from '../../../components/Logo'
+import { ButtonText } from '../../../components/ButtonText'
 
 import { Container, InputWrapper } from './styles'
 
