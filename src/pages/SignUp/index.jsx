@@ -3,6 +3,8 @@ import { isMobile } from 'react-device-detect'
 
 import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
+import { ButtonText } from '../../components/ButtonText'
+
 import { Container, InputWrapper } from './styles'
 
 export function SignUp() {
@@ -64,7 +66,9 @@ export function SignUp() {
           Criar conta
         </Button>
 
-        <span>Já tenho uma conta</span>
+        <ButtonText to='/'>
+          Já tenho uma conta
+        </ButtonText>
       </form>
 
     </Container>
