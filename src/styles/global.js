@@ -18,6 +18,7 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
     border: 2px solid transparent;
+    transition: opacity 0.3s ease;
   }
 
   button:focus {
@@ -25,7 +26,7 @@ export default createGlobalStyle`
   }
 
   button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   body {
