@@ -9,5 +9,5 @@ export const Container = styled.button`
   color: ${({ theme }) => theme.colors.text.primary};
 
   border-radius: 5px;
-  padding: 1.2rem 0;
+  padding: 1.2rem 3.2rem;
 `
