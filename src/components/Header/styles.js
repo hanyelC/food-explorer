@@ -4,16 +4,6 @@ export const Container = styled.header`
   padding: 2.8rem 3rem;
   background-color: ${({ theme }) => theme.colors.BG.secondary};
 
-  & > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
-    margin: 0 auto;
-    
-    font-family: ${({ theme }) => theme.FF.primary};
-  }
-    
   & > div > div:first-child {
     display: flex;
     align-items: center;
@@ -49,4 +39,19 @@ export const Container = styled.header`
 
 export const Wrapper = styled.div`
   max-width: 1120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  margin: 0 auto;
+
+  font-family: ${({ theme }) => theme.FF.primary};
+
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+
+    & > div:nth-child(3) {
+      order: 5;
+    }
+  }
 `
