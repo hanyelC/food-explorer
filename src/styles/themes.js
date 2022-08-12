@@ -17,7 +17,7 @@ export const dark = {
       primary: '#FFF',
       secondary: '#C4C4CC',
       tertiary: '#7C7C8A',
-      quaternary: '',
+      quaternary: '#82F3FF',
     }
   },
   FF: {
