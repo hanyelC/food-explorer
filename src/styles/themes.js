@@ -5,17 +5,19 @@ export const dark = {
       primary: '#000A0F',
       secondary: '#00111A',
       tertiary: '#0D1D25',
+      quaternary: 'rgba(0, 0, 0, 0.32)',
       btn: {
         primary: '#92000E',
       },
     },
     border: {
-      primary: '#fad211',
+      primary: 'rgba(0, 0, 0, 0.65)',
     },
     text: {
       primary: '#FFF',
       secondary: '#C4C4CC',
-      tertiary: '#7C7C8A'
+      tertiary: '#7C7C8A',
+      quaternary: '',
     }
   },
   FF: {
@@ -32,6 +34,7 @@ export const light = {
       primary: '#FFF',
       secondary: '#FFF',
       tertiary: '#FFF',
+      quaternary: '',
       btn: {
         primary: '#92000E',
       },
@@ -41,7 +44,10 @@ export const light = {
 
     },
     text: {
-      primary: '#000'
+      primary: '#000',
+      secondary: '',
+      tertiary: '',
+      quaternary: '',
     },
   },
   FF: {
