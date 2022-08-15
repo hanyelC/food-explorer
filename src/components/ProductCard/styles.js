@@ -5,10 +5,23 @@ export const Container = styled.div`
   padding: 5.6rem 4rem 4rem 4rem;
   position: relative;
 
-  > span {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  > svg {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1.6rem;
+    right: 1.6rem;
+    font-size: 2.6rem;
+  }
+
+  .favorite {
+    fill: #92000E;
+    stroke: #92000E;
   }
 `
 
@@ -46,5 +59,10 @@ export const Wrapper = styled.div`
     line-height: 5.1rem;
     font-family: ${({ theme }) => theme.FF.primary};
     color: ${({ theme }) => theme.colors.text.quaternary};
+  }
+
+  & > div:last-child {
+   display: flex;
+   gap: 1.6rem;
   }
 `
