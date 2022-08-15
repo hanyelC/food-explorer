@@ -40,7 +40,7 @@ export function ProductCard({ img, title, description, price }) {
             handleIncrease={handleIncrease}
             quantity={quantity}
           />
-          <Button>Incluir</Button>
+          <Button>incluir</Button>
         </div>
       </Wrapper>
 
