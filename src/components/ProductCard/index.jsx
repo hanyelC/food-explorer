@@ -24,10 +24,12 @@ export function ProductCard({ img, title, description, price }) {
 
   return (
     <Container>
-      <FiHeart
-        onClick={handleFavorite}
-        className={favorite ? 'favorite' : ''}
-      />
+      <button onClick={handleFavorite}>
+        <FiHeart
+          className={favorite ? 'favorite' : ''}
+          onFocus={() => { console.log('focus') }}
+        />
+      </button>
 
       <Wrapper>
         <img src={img} />

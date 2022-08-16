@@ -12,11 +12,20 @@ export const Container = styled.div`
   -ms-user-select: none;
   user-select: none;
 
-  > svg {
+  > button {
     position: absolute;
     top: 1.6rem;
     right: 1.6rem;
     font-size: 2.6rem;
+    background-color: transparent;
+  }
+
+  > button:focus {
+    border-color: transparent;
+  }
+
+  > button:focus svg {
+    stroke: #82F3FF;
   }
 
   .favorite {
