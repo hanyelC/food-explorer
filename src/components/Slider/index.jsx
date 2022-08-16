@@ -37,7 +37,6 @@ export function Slider({ products }) {
       }}
     >
 
-
       {
         products.map((prod) => (
           <SwiperSlide
@@ -51,7 +50,6 @@ export function Slider({ products }) {
           </SwiperSlide>
         ))
       }
-
     </Swiper>
   )
 }
