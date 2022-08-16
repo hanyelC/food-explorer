@@ -1,16 +1,13 @@
 import { Container } from './styles'
-import { ProductCard } from '../ProductCard'
-import im from '../../assets/Mask group.png'
+import { Slider } from '../Slider'
 
-export function Section() {
+export function Section({ category, products }) {
   return (
     <Container>
-      <ProductCard
-        img={im}
-        title={'Salada Ravanello'}
-        description={'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.'}
-        price={49.97}
-      />
+      <h2>{category}</h2>
+
+      <Slider products={products} />
+
     </Container>
   )
 }
