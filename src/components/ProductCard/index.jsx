@@ -27,7 +27,6 @@ export function ProductCard({ img, title, description, price }) {
       <button onClick={handleFavorite}>
         <FiHeart
           className={favorite ? 'favorite' : ''}
-          onFocus={() => { console.log('focus') }}
         />
       </button>
 
