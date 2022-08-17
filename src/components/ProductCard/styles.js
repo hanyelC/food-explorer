@@ -12,6 +12,12 @@ export const Container = styled.div`
   -ms-user-select: none;
   user-select: none;
 
+  background-color: ${({ theme }) => theme.colors.BG.quaternary};
+
+  border: 1px solid ${({ theme }) => theme.colors.border.primary};
+
+  border-radius: 10px;
+
   > button {
     position: absolute;
     top: 1.6rem;
@@ -51,7 +57,6 @@ export const Wrapper = styled.div`
     font-weight: 700;
     line-height: 3.4rem;
     font-family: ${({ theme }) => theme.FF.secondary};
-    inline-size: max-content;
   }
 
   > p {
