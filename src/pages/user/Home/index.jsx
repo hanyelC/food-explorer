@@ -1,7 +1,6 @@
 import { Header } from '../../../components/Header'
 import { Footer } from '../../../components/Footer'
 import { Section } from '../../../components/Section'
-import { ProductCard } from '../../../components/ProductCard'
 import { Banner } from '../../../components/Banner'
 
 import im from '../../../assets/Mask group.png'
