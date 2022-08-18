@@ -15,7 +15,6 @@ export function SignUp() {
   const { signUp } = useAuth()
 
   const handleSignUp = async data => {
-    console.log(data)
     await signUp(data)
   }
 
