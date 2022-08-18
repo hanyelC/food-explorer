@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { isMobile } from 'react-device-detect'
 
+import { useAuth } from '../../../hooks/auth'
+
 import { Button } from '../../../components/Button'
 import { Logo } from '../../../components/Logo'
 import { ButtonText } from '../../../components/ButtonText'
@@ -10,7 +12,12 @@ import { Container, InputWrapper } from './styles'
 export function SignUp() {
   const { register, handleSubmit } = useForm()
 
-  const onSubmit = data => console.log(data)
+  const { signUp } = useAuth()
+
+  const handleSignUp = async data => {
+    console.log(data)
+    await signUp(data)
+  }
 
   return (
     <Container isMobile={isMobile}>
@@ -19,7 +26,7 @@ export function SignUp() {
         <h1>food explorer</h1>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(handleSignUp)}>
         <h2>Crie sua conta</h2>
 
         <InputWrapper>
