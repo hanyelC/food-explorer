@@ -14,7 +14,6 @@ export function Header() {
   const { signOut } = useAuth()
 
   const handleSignOut = () => {
-    console.log('click')
     signOut()
   }
 
