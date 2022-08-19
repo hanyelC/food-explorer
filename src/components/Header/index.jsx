@@ -1,6 +1,8 @@
 import { FiSearch } from 'react-icons/fi'
 
-import signOut from '../../assets/signOut.svg'
+import { useAuth } from '../../hooks/auth'
+
+import signOutSVG from '../../assets/signOut.svg'
 
 import { Logo } from '../Logo'
 import { Input } from '../Input'
@@ -9,10 +11,16 @@ import { Button } from '../Button'
 import { Container, Wrapper } from './styles'
 
 export function Header() {
+  const { signOut } = useAuth()
+
+  const handleSignOut = () => {
+    console.log('click')
+    signOut()
+  }
+
   return (
     <Container>
       <Wrapper>
-
         <div>
           <Logo size={30} />
           <h2>food explorer</h2>
@@ -29,9 +37,8 @@ export function Header() {
           {`Meu pedido (0)`}
         </Button>
 
-        <button onClick={() => console.log('Sign Out')}>
-          <img src={signOut} alt="" />
-
+        <button onClick={handleSignOut}>
+          <img src={signOutSVG} alt="sign out" />
         </button>
       </Wrapper>
 
