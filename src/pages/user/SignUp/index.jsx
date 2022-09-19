@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { isMobile } from 'react-device-detect'
+import { useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../../hooks/auth'
 
@@ -14,8 +15,10 @@ export function SignUp() {
 
   const { signUp } = useAuth()
 
+  const navigate = useNavigate()
+
   const handleSignUp = async data => {
-    await signUp(data)
+    await signUp(data, () => navigate('/'))
   }
 
   return (
