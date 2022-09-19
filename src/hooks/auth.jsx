@@ -7,7 +7,7 @@ const AuthContext = createContext({})
 export function AuthProvider({ children }) {
   const [data, setData] = useState({})
 
-  async function signUp({ name, email, password, passwordConfirm }) {
+  async function signUp({ name, email, password, passwordConfirm }, cb) {
     try {
       const response = await api.post('/users', {
         name, email, password, passwordConfirm
@@ -22,6 +22,7 @@ export function AuthProvider({ children }) {
 
       setData({ user, token })
 
+      cb && cb()
     } catch (error) {
       console.log(error)
       alert(error.response.data.message)
