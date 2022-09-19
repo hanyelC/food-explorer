@@ -58,6 +58,8 @@ export function AuthProvider({ children }) {
     const user = JSON.parse(localStorage.getItem("@foodexplorer:user"))
     const token = localStorage.getItem("@foodexplorer:token")
 
+    api.defaults.headers.authorization = `Bearer ${token}`
+
     setData({ user, token })
   }, [])
 
