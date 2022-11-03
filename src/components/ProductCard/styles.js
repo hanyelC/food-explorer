@@ -50,6 +50,7 @@ export const Wrapper = styled.div`
   > img {
     width: 17.6rem;
     height: 17.6rem;
+    object-fit: contain;
   }
 
   > h3 {
