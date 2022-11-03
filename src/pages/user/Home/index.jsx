@@ -1,75 +1,74 @@
-import { Header } from '../../../components/Header'
-import { Footer } from '../../../components/Footer'
-import { Section } from '../../../components/Section'
-import { Banner } from '../../../components/Banner'
+import { useState, useEffect } from "react";
 
-import im from '../../../assets/Mask group.png'
+import { api } from "../../../services/api";
+import { useAuth } from "../../../hooks/auth";
 
-import { Container } from './styles'
+import { Header } from "../../../components/Header";
+import { Footer } from "../../../components/Footer";
+import { Section } from "../../../components/Section";
+import { Banner } from "../../../components/Banner";
+
+import { Container } from "./styles";
 
 export function Home() {
+  const [products, setProducts] = useState([]);
 
-  const products = [
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Outra coisa Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 49.97
-    },
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Salada Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 100.97
-    },
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Salada Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 49.97
-    },
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Salada Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 49.97
-    },
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Salada Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 49.97
-    },
-    {
-      id: Math.ceil(Math.random() * 1E9).toString(16),
-      img: im,
-      title: 'Salada Ravanello',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
-      price: 597
+  const { signOut } = useAuth();
+
+  const productsByCategory = new Map();
+
+  if (products.length > 0) {
+    for (const product of products) {
+      const { categories } = product;
+
+      for (const { category } of categories) {
+        const cat = productsByCategory.get(category.id);
+        if (cat === undefined) {
+          productsByCategory.set(category.id, {
+            category,
+            products: [],
+          });
+        }
+        productsByCategory.get(category.id).products.push(product);
+      }
     }
-  ]
+  }
+
+  async function getProducts() {
+    try {
+      const response = await api.get("/products");
+      setProducts(response.data);
+    } catch (err) {
+      console.log(err.response);
+      if (err.response.status === 401) {
+        signOut();
+      }
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <Container>
       <Header />
 
       <Banner />
-
-      <Section
-        category={'Pratos principais'}
-        products={products}
-      />
-
-      <Section
-        category={'Sobremesa'}
-        products={products}
-      />
+      {products &&
+        Array.from(productsByCategory.values()).length > 0 ?
+        Array.from(productsByCategory.values()).map(
+          ({ category, products }) => (
+            <Section
+              key={category.id}
+              category={category.description}
+              products={products}
+            />
+          )
+        ) : <h1>Nada por aqui</h1>
+      }
 
       <Footer />
     </Container>
-  )
+  );
 }
