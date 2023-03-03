@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  height: 46.2rem;
   max-width: 30rem;
-  padding: 5.6rem 4rem 4rem 4rem;
+  padding: 2.4rem;
   position: relative;
 
   -webkit-touch-callout: none;
@@ -54,6 +55,7 @@ export const Wrapper = styled.div`
   }
 
   > h3 {
+    white-space: nowrap;
     font-size:  2.4rem;
     font-weight: 700;
     line-height: 3.4rem;
@@ -66,6 +68,13 @@ export const Wrapper = styled.div`
     line-height: 2.2rem;
     font-family: ${({ theme }) => theme.FF.primary};
     text-align: justify;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   > span {

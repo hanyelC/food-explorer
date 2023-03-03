@@ -2,11 +2,11 @@ import { useForm } from 'react-hook-form'
 import { isMobile } from 'react-device-detect'
 import { useNavigate } from 'react-router-dom'
 
-import { useAuth } from '../../../hooks/auth'
+import { useAuth } from '../../hooks/auth'
 
-import { Button } from '../../../components/Button'
-import { Logo } from '../../../components/Logo'
-import { ButtonText } from '../../../components/ButtonText'
+import { Button } from '../../components/Button'
+import { Logo } from '../../components/Logo'
+import { ButtonText } from '../../components/ButtonText'
 
 import { Container, InputWrapper } from './styles'
 

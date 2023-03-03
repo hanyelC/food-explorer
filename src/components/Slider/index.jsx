@@ -28,10 +28,10 @@ export function Slider({ products }) {
           slidesPerView: 3,
         },
         1050: {
-          slidesPerView: 3.5,
+          slidesPerView: 3,
         },
         1200: {
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
       }}
     >
