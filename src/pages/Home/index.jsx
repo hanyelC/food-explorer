@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-import { api } from "../../../services/api";
-import { useAuth } from "../../../hooks/auth";
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
-import { Header } from "../../../components/Header";
-import { Footer } from "../../../components/Footer";
-import { Section } from "../../../components/Section";
-import { Banner } from "../../../components/Banner";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { Section } from "../../components/Section";
+import { Banner } from "../../components/Banner";
 
 import { Container } from "./styles";
 
