@@ -27,20 +27,14 @@ export function Header() {
 
         <button>Meus favoritos</button>
 
-        <Input
-          icon={FiSearch}
-          placeholder='Busque pelas opções de pratos'
-        />
+        <Input icon={FiSearch} placeholder="Busque pelas opções de pratos" />
 
-        <Button>
-          {`Meu pedido (0)`}
-        </Button>
+        <Button>{`Meu pedido (0)`}</Button>
 
         <button onClick={handleSignOut}>
           <img src={signOutSVG} alt="sign out" />
         </button>
       </Wrapper>
-
     </Container>
   )
 }

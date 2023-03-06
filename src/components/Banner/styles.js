@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
     font-weight: 500;
     font-family: ${({ theme }) => theme.FF.secondary};
   }
-  
+
   > div > p {
     font-size: 1.6rem;
     font-weight: 400;

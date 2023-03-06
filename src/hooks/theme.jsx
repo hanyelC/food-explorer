@@ -18,13 +18,8 @@ export const CustomThemeProvider = ({ children }) => {
   }, [theme])
 
   return (
-    <ThemeContext.Provider
-      value={{ toggleTheme, theme }}
-    >
-      <ThemeProvider theme={theme}>
-        {children}
-      </ThemeProvider>
-
+    <ThemeContext.Provider value={{ toggleTheme, theme }}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   )
 }

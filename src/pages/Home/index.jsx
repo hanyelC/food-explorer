@@ -1,62 +1,61 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-import { api } from "../../services/api";
-import { useAuth } from "../../hooks/auth";
+import { api } from '../../services/api'
+import { useAuth } from '../../hooks/auth'
 
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { Section } from "../../components/Section";
-import { Banner } from "../../components/Banner";
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
+import { Section } from '../../components/Section'
+import { Banner } from '../../components/Banner'
 
-import { Container } from "./styles";
+import { Container } from './styles'
 
 export function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
 
-  const { signOut } = useAuth();
+  const { signOut } = useAuth()
 
-  const productsByCategory = new Map();
+  const productsByCategory = new Map()
 
   if (products.length > 0) {
     for (const product of products) {
-      const { categories } = product;
+      const { categories } = product
 
       for (const { category } of categories) {
-        const cat = productsByCategory.get(category.id);
+        const cat = productsByCategory.get(category.id)
         if (cat === undefined) {
           productsByCategory.set(category.id, {
             category,
             products: [],
-          });
+          })
         }
-        productsByCategory.get(category.id).products.push(product);
+        productsByCategory.get(category.id).products.push(product)
       }
     }
   }
 
   async function getProducts() {
     try {
-      const response = await api.get("/products");
-      setProducts(response.data);
+      const response = await api.get('/products')
+      setProducts(response.data)
     } catch (err) {
-      console.log(err.response);
+      console.log(err.response)
       if (err.response.status === 401) {
-        signOut();
+        signOut()
       }
     }
   }
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    getProducts()
+  }, [])
 
   return (
     <Container>
       <Header />
 
       <Banner />
-      {products &&
-        Array.from(productsByCategory.values()).length > 0 ?
+      {products && Array.from(productsByCategory.values()).length > 0 ? (
         Array.from(productsByCategory.values()).map(
           ({ category, products }) => (
             <Section
@@ -65,10 +64,12 @@ export function Home() {
               products={products}
             />
           )
-        ) : <h1>Nada por aqui</h1>
-      }
+        )
+      ) : (
+        <h1>Nada por aqui</h1>
+      )}
 
       <Footer />
     </Container>
-  );
+  )
 }

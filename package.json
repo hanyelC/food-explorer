@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "format": "prettier --check --write \"src\"",
     "preview": "vite preview",
     "prepare": "husky install"
   },
@@ -29,6 +30,7 @@
     "@vitejs/plugin-react": "^2.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.1",
+    "prettier": "^2.8.4",
     "vite": "^3.0.0"
   },
   "config": {

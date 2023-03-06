@@ -14,7 +14,7 @@ export function SignIn() {
 
   const { signIn } = useAuth()
 
-  const handleSignIn = async data => {
+  const handleSignIn = async (data) => {
     await signIn(data)
   }
 
@@ -31,8 +31,8 @@ export function SignIn() {
         <InputWrapper>
           <label htmlFor="email">Email</label>
           <input
-            id='email'
-            type='text'
+            id="email"
+            type="text"
             {...register('email')}
             placeholder={'Exemplo: exemplo@exemplo.com.br'}
           />
@@ -41,22 +41,17 @@ export function SignIn() {
         <InputWrapper>
           <label htmlFor="password">Senha</label>
           <input
-            id='password'
-            type='text'
+            id="password"
+            type="text"
             {...register('password')}
             placeholder={'No mínimo 6 caracteres'}
           />
         </InputWrapper>
 
-        <Button type='submit'>
-          Entrar
-        </Button>
+        <Button type="submit">Entrar</Button>
 
-        <ButtonText to='/register'>
-          Criar uma conta
-        </ButtonText>
+        <ButtonText to="/register">Criar uma conta</ButtonText>
       </form>
-
     </Container>
   )
 }

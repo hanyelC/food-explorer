@@ -18,12 +18,12 @@ export const dark = {
       secondary: '#C4C4CC',
       tertiary: '#7C7C8A',
       quaternary: '#82F3FF',
-    }
+    },
   },
   FF: {
-    primary: '\'Roboto\', sans-serif',
-    secondary: '\'Poppins\', sans-serif',
-    tertiary: '\'DM Sans\', sans-serif'
+    primary: "'Roboto', sans-serif",
+    secondary: "'Poppins', sans-serif",
+    tertiary: "'DM Sans', sans-serif",
   },
 }
 
@@ -41,7 +41,6 @@ export const light = {
     },
     border: {
       primary: '#FFF',
-
     },
     text: {
       primary: '#000',
@@ -51,8 +50,8 @@ export const light = {
     },
   },
   FF: {
-    primary: '\'Roboto\', sans-serif',
-    secondary: '\'Poppins\', sans-serif',
-    tertiary: '\'DM Sans\', sans-serif'
-  }
+    primary: "'Roboto', sans-serif",
+    secondary: "'Poppins', sans-serif",
+    tertiary: "'DM Sans', sans-serif",
+  },
 }

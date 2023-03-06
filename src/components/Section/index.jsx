@@ -7,7 +7,6 @@ export function Section({ category, products }) {
       <h2>{category}</h2>
 
       <Slider products={products} />
-
     </Container>
   )
 }

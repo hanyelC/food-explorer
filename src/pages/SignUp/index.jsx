@@ -17,7 +17,7 @@ export function SignUp() {
 
   const navigate = useNavigate()
 
-  const handleSignUp = async data => {
+  const handleSignUp = async (data) => {
     await signUp(data, () => navigate('/'))
   }
 
@@ -34,8 +34,8 @@ export function SignUp() {
         <InputWrapper>
           <label htmlFor="name">Seu nome</label>
           <input
-            id='name'
-            type='text'
+            id="name"
+            type="text"
             {...register('name')}
             placeholder={'Exemplo: Maria da Silva'}
           />
@@ -44,8 +44,8 @@ export function SignUp() {
         <InputWrapper>
           <label htmlFor="email">Email</label>
           <input
-            id='email'
-            type='text'
+            id="email"
+            type="text"
             {...register('email')}
             placeholder={'Exemplo: exemplo@exemplo.com.br'}
           />
@@ -54,8 +54,8 @@ export function SignUp() {
         <InputWrapper>
           <label htmlFor="password">Senha</label>
           <input
-            id='password'
-            type='text'
+            id="password"
+            type="text"
             {...register('password')}
             placeholder={'No mínimo 6 caracteres'}
           />
@@ -64,22 +64,17 @@ export function SignUp() {
         <InputWrapper>
           <label htmlFor="passwordConfirm">Insira a senha mais uma vez</label>
           <input
-            id='passwordConfirm'
-            type='text'
+            id="passwordConfirm"
+            type="text"
             {...register('passwordConfirm')}
             placeholder={'No mínimo 6 caracteres'}
           />
         </InputWrapper>
 
-        <Button type='submit'>
-          Criar conta
-        </Button>
+        <Button type="submit">Criar conta</Button>
 
-        <ButtonText to='/'>
-          Já tenho uma conta
-        </ButtonText>
+        <ButtonText to="/">Já tenho uma conta</ButtonText>
       </form>
-
     </Container>
   )
 }
