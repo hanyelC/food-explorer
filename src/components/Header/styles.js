@@ -10,6 +10,7 @@ export const Container = styled.header`
     gap: 1.2rem;
 
     & > h2 {
+      position: relative;
       font-size: 2.9rem;
       font-weight: 700;
       font-family: ${({ theme }) => theme.FF.primary};
@@ -17,7 +18,7 @@ export const Container = styled.header`
     }
   }
 
-  & > div > button:first-of-type {
+  & > div > button:nth-child(2) {
     background-color: transparent;
     font-size: 1.6rem;
     font-weight: 400;
@@ -54,4 +55,15 @@ export const Wrapper = styled.div`
       order: 5;
     }
   }
+`
+
+export const Admin = styled.span`
+  position: absolute;
+  right: 0;
+  bottom: -1.2rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: ${({ theme }) => theme.FF.primary};
+  color: ${({ theme }) => theme.colors.text.quaternary};
 `
