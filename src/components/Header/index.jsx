@@ -24,8 +24,6 @@ export function Header() {
 
   const isAdmin = user?.admin
 
-  console.log(isAdmin)
-
   return (
     <Container>
       <Wrapper>
