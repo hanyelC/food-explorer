@@ -1,29 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiHeart } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
 
-import { Counter } from '../Counter'
 import { Button } from '../Button'
+import { Counter } from '../Counter'
+import { Pencil } from '../Icons/Pencil'
+
+import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api'
 
 import { Container, Wrapper } from './styles'
-import { api } from '../../services/api'
-import { useEffect } from 'react'
 
 export function ProductCard({ img, title, description, price }) {
   const [quantity, setQuantity] = useState(1)
   const [favorite, setFavorite] = useState(false)
   const [imageUrl, setImageUrl] = useState(null)
 
-  const handleFavorite = () => {
-    setFavorite((prevState) => !prevState)
-  }
+  const { user } = useAuth()
 
-  const handleDecrease = () => {
-    setQuantity((prevState) => prevState - 1)
-  }
+  const isAdmin = user?.admin
 
-  const handleIncrease = () => {
-    setQuantity((prevState) => prevState + 1)
-  }
+  const navigate = useNavigate()
+
+  const handleFavorite = () => setFavorite((prevState) => !prevState)
+
+  const handleDecrease = () => setQuantity((prevState) => prevState - 1)
+
+  const handleIncrease = () => setQuantity((prevState) => prevState + 1)
+
+  const handleUpdateProduct = () => navigate('/admin/edit-product')
 
   const getImage = async () => {
     try {
@@ -47,9 +52,15 @@ export function ProductCard({ img, title, description, price }) {
   return (
     imageUrl && (
       <Container>
-        <button onClick={handleFavorite}>
-          <FiHeart className={favorite ? 'favorite' : ''} />
-        </button>
+        {isAdmin ? (
+          <button onClick={handleUpdateProduct}>
+            <Pencil />
+          </button>
+        ) : (
+          <button onClick={handleFavorite}>
+            <FiHeart className={favorite ? 'favorite' : ''} />
+          </button>
+        )}
 
         <Wrapper>
           <img src={imageUrl} />
@@ -58,14 +69,16 @@ export function ProductCard({ img, title, description, price }) {
           </h3>
           <p>{description}</p>
           <span>R$ {price.toFixed(2).replace('.', ',')}</span>
-          <div>
-            <Counter
-              handleDecrease={handleDecrease}
-              handleIncrease={handleIncrease}
-              quantity={quantity}
-            />
-            <Button>incluir</Button>
-          </div>
+          {!isAdmin && (
+            <div>
+              <Counter
+                handleDecrease={handleDecrease}
+                handleIncrease={handleIncrease}
+                quantity={quantity}
+              />
+              <Button>incluir</Button>
+            </div>
+          )}
         </Wrapper>
       </Container>
     )
