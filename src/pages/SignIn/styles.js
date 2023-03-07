@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
@@ -9,8 +9,8 @@ export const Container = styled.div`
   justify-content: center;
   padding: 2rem;
   color: #fff;
- 
-  & div:first-child{
+
+  & div:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,19 +35,18 @@ export const Container = styled.div`
     & > h2 {
       font-size: 3.2rem;
       font-weight: 500;
-      font-family: ${({ theme }) => theme.FF.secondary}
+      font-family: ${({ theme }) => theme.FF.secondary};
     }
   }
 
   ${({ isMobile }) => {
-    return isMobile ?
-      `
+    return isMobile
+      ? `
       & h1 {
         inline-size: min-content;
       }
       `
-      :
-      `
+      : `
       flex-direction: row;
       justify-content: space-around;
       & > form {
@@ -58,31 +57,31 @@ export const Container = styled.div`
 `
 
 export const InputWrapper = styled.div`
-display: flex;
-flex-direction: column;
-gap: 8px;
-width: 100%;
-
-& > label {
-  font-size: 1.6rem;
-  font-weight: 400;
-  font-family: ${({ theme }) => theme.FF.primary} !important;
-  color: ${({ theme }) => theme.colors.text.secondary}
-}
-
-& > input {
-  font-size: 1.6rem;
-  font-weight: 400;
-  font-family: ${({ theme }) => theme.FF.primary};
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.colors.text.primary};
-  border-radius: 5px;
-  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   width: 100%;
-  color: ${({ theme }) => theme.colors.text.primary};
-}
 
-& > input::placeholder {
-  color: ${({ theme }) => theme.colors.text.secondary};
-}
+  & > label {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FF.primary} !important;
+    color: ${({ theme }) => theme.colors.text.secondary};
+  }
+
+  & > input {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FF.primary};
+    background-color: transparent;
+    border: 1px solid ${({ theme }) => theme.colors.text.primary};
+    border-radius: 5px;
+    padding: 1.2rem 1.4rem;
+    width: 100%;
+    color: ${({ theme }) => theme.colors.text.primary};
+  }
+
+  & > input::placeholder {
+    color: ${({ theme }) => theme.colors.text.secondary};
+  }
 `

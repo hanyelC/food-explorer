@@ -1,9 +1,8 @@
 import { Logo } from '../Logo'
 
-import { Container, Wrapper  } from './styles'
+import { Container, Wrapper } from './styles'
 
 export function Footer() {
-
   return (
     <Container>
       <Wrapper>

@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 46.2rem;
   max-width: 30rem;
   padding: 2.4rem;
@@ -32,12 +35,12 @@ export const Container = styled.div`
   }
 
   > button:focus svg {
-    stroke: #82F3FF;
+    stroke: #82f3ff;
   }
 
   .favorite {
-    fill: #92000E;
-    stroke: #92000E;
+    fill: #92000e;
+    stroke: #92000e;
   }
 `
 
@@ -52,18 +55,33 @@ export const Wrapper = styled.div`
     width: 17.6rem;
     height: 17.6rem;
     object-fit: contain;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   > h3 {
     white-space: nowrap;
-    font-size:  2.4rem;
+    font-size: 2.4rem;
     font-weight: 700;
     line-height: 3.4rem;
     font-family: ${({ theme }) => theme.FF.secondary};
+
+    &:focus {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: 0.8;
+    }
   }
 
   > p {
-    font-size:  1.4rem;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 2.2rem;
     font-family: ${({ theme }) => theme.FF.primary};
@@ -78,7 +96,7 @@ export const Wrapper = styled.div`
   }
 
   > span {
-    font-size:  3.2rem;
+    font-size: 3.2rem;
     font-weight: 400;
     line-height: 5.1rem;
     font-family: ${({ theme }) => theme.FF.primary};
@@ -86,7 +104,7 @@ export const Wrapper = styled.div`
   }
 
   & > div:last-child {
-   display: flex;
-   gap: 1.6rem;
+    display: flex;
+    gap: 1.6rem;
   }
 `

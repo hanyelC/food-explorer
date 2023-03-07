@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.BG.tertiary};
 
   border-radius: 10px;
-  
+
   padding: 1.2rem 1.4rem;
 
   border: 1px solid transparent;
@@ -19,11 +19,11 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.6rem;
-    
+
     background-color: transparent;
     border: none;
     width: 100%;
-    
+
     color: ${({ theme }) => theme.colors.text.primary};
     font-family: ${({ theme }) => theme.FF.primary};
   }
@@ -38,6 +38,6 @@ export const Container = styled.div`
   }
 
   &:focus-within {
-    border: 1px solid #FFF
+    border: 1px solid #fff;
   }
 `

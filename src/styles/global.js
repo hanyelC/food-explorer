@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   :root {
@@ -31,6 +31,6 @@ export default createGlobalStyle`
 
   body {
     width: 100%;
-    background: ${props => props.theme.colors.BG.primary};
+    background: ${(props) => props.theme.colors.BG.primary};
   }
-`;
+`

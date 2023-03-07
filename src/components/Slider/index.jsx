@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/bundle";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css/bundle'
 
-import { ProductCard } from "../ProductCard";
+import { ProductCard } from '../ProductCard'
 
 export function Slider({ products }) {
   return (
@@ -39,14 +39,15 @@ export function Slider({ products }) {
         return (
           <SwiperSlide key={prod.id}>
             <ProductCard
+              id={prod.id}
               description={prod.description}
               img={prod.image.id}
               title={prod.name}
               price={prod.price}
             />
           </SwiperSlide>
-        );
+        )
       })}
     </Swiper>
-  );
+  )
 }

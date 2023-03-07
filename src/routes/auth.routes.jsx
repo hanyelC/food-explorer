@@ -7,9 +7,9 @@ import { NotFound } from '../pages/NotFound'
 export function AuthRoutes() {
   return (
     <Routes>
-      <Route path='/' element={<SignIn />} />
-      <Route path='/register' element={<SignUp />} />
-      <Route path='/*' element={<NotFound />}/>
+      <Route path="/" element={<SignIn />} />
+      <Route path="/register" element={<SignUp />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   )
 }

@@ -1,73 +1,88 @@
-import { useState } from "react";
-import { FiHeart } from "react-icons/fi";
+import { useEffect, useState } from 'react'
+import { FiHeart } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
 
-import { Counter } from "../Counter";
-import { Button } from "../Button";
+import { Button } from '../Button'
+import { Counter } from '../Counter'
+import { Pencil } from '../Icons/Pencil'
 
-import { Container, Wrapper } from "./styles";
-import { api } from "../../services/api";
-import { useEffect } from "react";
+import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api'
 
-export function ProductCard({ img, title, description, price }) {
-  const [quantity, setQuantity] = useState(1);
-  const [favorite, setFavorite] = useState(false);
-  const [imageUrl, setImageUrl] = useState(null);
+import { Container, Wrapper } from './styles'
 
-  const handleFavorite = () => {
-    setFavorite((prevState) => !prevState);
-  };
+export function ProductCard({ id, img, title, description, price }) {
+  const [quantity, setQuantity] = useState(1)
+  const [favorite, setFavorite] = useState(false)
+  const [imageUrl, setImageUrl] = useState(null)
 
-  const handleDecrease = () => {
-    setQuantity((prevState) => prevState - 1);
-  };
+  const { user } = useAuth()
 
-  const handleIncrease = () => {
-    setQuantity((prevState) => prevState + 1);
-  };
+  const isAdmin = user?.admin
+
+  const navigate = useNavigate()
+
+  const handleFavorite = () => setFavorite((prevState) => !prevState)
+
+  const handleDecrease = () => setQuantity((prevState) => prevState - 1)
+
+  const handleIncrease = () => setQuantity((prevState) => prevState + 1)
+
+  const handleUpdateProduct = () => navigate('/admin/edit-product')
 
   const getImage = async () => {
     try {
       const response = await api.get(`/images/${img}`, {
-        responseType: "blob",
-      });
-      const url = URL.createObjectURL(response.data);
+        responseType: 'blob',
+      })
+      const url = URL.createObjectURL(response.data)
 
-      setImageUrl(url);
+      setImageUrl(url)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
+
+  const redirectToProductPage = () => navigate(`/product/${id}`)
 
   useEffect(() => {
-    getImage();
+    getImage()
 
-    return () => URL.revokeObjectURL(imageUrl);
-  }, []);
+    return () => URL.revokeObjectURL(imageUrl)
+  }, [])
 
   return (
     imageUrl && (
       <Container>
-        <button onClick={handleFavorite}>
-          <FiHeart className={favorite ? "favorite" : ""} />
-        </button>
+        {isAdmin ? (
+          <button onClick={handleUpdateProduct}>
+            <Pencil />
+          </button>
+        ) : (
+          <button onClick={handleFavorite}>
+            <FiHeart className={favorite ? 'favorite' : ''} />
+          </button>
+        )}
 
         <Wrapper>
-          <img src={imageUrl} />
-          <h3>
-            {title} {">"}
+          <img src={imageUrl} onClick={redirectToProductPage} />
+          <h3 onClick={redirectToProductPage} tabIndex="0">
+            {title} {'>'}
           </h3>
           <p>{description}</p>
-          <span>R$ {price.toFixed(2).replace(".", ",")}</span>
-          <div>
-            <Counter
-              handleDecrease={handleDecrease}
-              handleIncrease={handleIncrease}
-              quantity={quantity}
-            />
-            <Button>incluir</Button>
-          </div>
+          <span>R$ {price.toFixed(2).replace('.', ',')}</span>
+          {!isAdmin && (
+            <div>
+              <Counter
+                handleDecrease={handleDecrease}
+                handleIncrease={handleIncrease}
+                quantity={quantity}
+              />
+              <Button>incluir</Button>
+            </div>
+          )}
         </Wrapper>
       </Container>
     )
-  );
+  )
 }
