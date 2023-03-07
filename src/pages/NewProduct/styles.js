@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
 
 export const Wrapper = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   width: 100%;
   max-width: 1120px;
