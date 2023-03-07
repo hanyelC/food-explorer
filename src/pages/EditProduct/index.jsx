@@ -1,5 +1,6 @@
 import { FiUpload } from 'react-icons/fi'
 import { BackButton } from '../../components/BackButton'
+import { Footer } from '../../components/Footer'
 
 import { Header } from '../../components/Header'
 
@@ -76,6 +77,7 @@ export function EditProduct() {
           </div>
         </Form>
       </Wrapper>
+      <Footer />
     </Container>
   )
 }
