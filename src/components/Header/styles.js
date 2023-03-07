@@ -8,6 +8,7 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     gap: 1.2rem;
+    cursor: pointer;
 
     & > h2 {
       position: relative;
