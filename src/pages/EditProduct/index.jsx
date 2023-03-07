@@ -7,6 +7,7 @@ import { CaretLeft } from '../../components/Icons/CaretLeft'
 import {
   BackButton,
   Container,
+  DeleteButton,
   Form,
   InputBackground,
   InputWrapper,
@@ -16,6 +17,8 @@ import {
 
 export function EditProduct() {
   const navigate = useNavigate()
+
+  const handleDeleteProduct = () => console.log('delete product')
 
   const handleNavigateBack = () => navigate(-1)
 
@@ -70,9 +73,15 @@ export function EditProduct() {
             </InputWrapper>
           </div>
 
-          <SubmitButton disabled={true} type="submit">
-            Salvar alterações
-          </SubmitButton>
+          <div>
+            <DeleteButton type="button" onClick={handleDeleteProduct}>
+              Excluir prato
+            </DeleteButton>
+
+            <SubmitButton disabled={true} type="submit">
+              Salvar alterações
+            </SubmitButton>
+          </div>
         </Form>
       </Wrapper>
     </Container>

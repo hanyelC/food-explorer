@@ -54,6 +54,11 @@ export const Form = styled.form`
         white-space: nowrap;
       }
     }
+
+    &:last-child {
+      width: fit-content;
+      align-self: flex-end;
+    }
   }
 `
 
@@ -132,22 +137,34 @@ export const InputBackground = styled.label`
   }
 `
 
-export const SubmitButton = styled.button`
+const BaseButton = styled.button`
   width: fit-content;
 
   padding: 1.2rem 2.4rem;
 
   border-radius: 5px;
 
-  background-color: ${({ theme }) => theme.colors.BG.btn.secondary};
-
   color: #fff;
   font-family: ${({ theme }) => theme.FF.secondary};
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 2.4rem;
+`
 
-  align-self: flex-end;
+export const DeleteButton = styled(BaseButton)`
+  background-color: ${({ theme }) => theme.colors.BG.fifth};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.BG.tertiary};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.BG.quaternary};
+  }
+`
+
+export const SubmitButton = styled(BaseButton)`
+  background-color: ${({ theme }) => theme.colors.BG.btn.secondary};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.BG.btn.primary};
