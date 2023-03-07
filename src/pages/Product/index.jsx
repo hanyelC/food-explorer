@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
@@ -24,6 +24,7 @@ export function Product() {
   const [productData, setProductData] = useState(null)
   const [imageUrl, setImageUrl] = useState(null)
 
+  const { id } = useParams()
   const navigate = useNavigate()
 
   const { user } = useAuth()
@@ -46,7 +47,7 @@ export function Product() {
 
   const getProductData = async () => {
     try {
-      const { data } = await api.get(`/products/1`)
+      const { data } = await api.get(`/products/${id}`)
 
       await getImage(data.image.image_name)
 
