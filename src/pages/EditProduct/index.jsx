@@ -1,7 +1,7 @@
 import { FiUpload } from 'react-icons/fi'
+
 import { BackButton } from '../../components/BackButton'
 import { Footer } from '../../components/Footer'
-
 import { Header } from '../../components/Header'
 
 import {

@@ -6,6 +6,7 @@ import { api } from '../../services/api'
 
 import { BackButton } from '../../components/BackButton'
 import { Counter } from '../../components/Counter'
+import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 
 import {
@@ -17,7 +18,6 @@ import {
   ProductInfo,
   Wrapper,
 } from './styles'
-import { Footer } from '../../components/Footer'
 
 export function Product() {
   const [counter, setCounter] = useState(1)
