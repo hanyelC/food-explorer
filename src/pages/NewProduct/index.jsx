@@ -1,11 +1,9 @@
 import { FiUpload } from 'react-icons/fi'
-import { useNavigate } from 'react-router-dom'
+import { BackButton } from '../../components/BackButton'
 
 import { Header } from '../../components/Header'
-import { CaretLeft } from '../../components/Icons/CaretLeft'
 
 import {
-  BackButton,
   Container,
   Form,
   InputBackground,
@@ -15,17 +13,11 @@ import {
 } from './styles'
 
 export function NewProduct() {
-  const navigate = useNavigate()
-
-  const handleNavigateBack = () => navigate(-1)
-
   return (
     <Container>
       <Header />
       <Wrapper>
-        <BackButton onClick={handleNavigateBack}>
-          <CaretLeft /> voltar
-        </BackButton>
+        <BackButton />
         <h2>Adicionar prato</h2>
         <Form>
           <div>

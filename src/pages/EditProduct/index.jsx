@@ -1,11 +1,9 @@
 import { FiUpload } from 'react-icons/fi'
-import { useNavigate } from 'react-router-dom'
+import { BackButton } from '../../components/BackButton'
 
 import { Header } from '../../components/Header'
-import { CaretLeft } from '../../components/Icons/CaretLeft'
 
 import {
-  BackButton,
   Container,
   DeleteButton,
   Form,
@@ -16,19 +14,13 @@ import {
 } from './styles'
 
 export function EditProduct() {
-  const navigate = useNavigate()
-
   const handleDeleteProduct = () => console.log('delete product')
-
-  const handleNavigateBack = () => navigate(-1)
 
   return (
     <Container>
       <Header />
       <Wrapper>
-        <BackButton onClick={handleNavigateBack}>
-          <CaretLeft /> voltar
-        </BackButton>
+        <BackButton />
         <h2>Editar prato</h2>
         <Form>
           <div>
