@@ -6,8 +6,11 @@ export const dark = {
       secondary: '#00111A',
       tertiary: '#0D1D25',
       quaternary: 'rgba(0, 0, 0, 0.32)',
+      fifth: '#0D161B',
       btn: {
         primary: '#92000E',
+        secondary: '#750310',
+        disabled: '#AB4D55',
       },
     },
     border: {
@@ -18,6 +21,7 @@ export const dark = {
       secondary: '#C4C4CC',
       tertiary: '#7C7C8A',
       quaternary: '#82F3FF',
+      fifth: '#E1E1E6',
     },
   },
   FF: {
