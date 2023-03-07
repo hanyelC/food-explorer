@@ -39,6 +39,7 @@ export function Slider({ products }) {
         return (
           <SwiperSlide key={prod.id}>
             <ProductCard
+              id={prod.id}
               description={prod.description}
               img={prod.image.id}
               title={prod.name}

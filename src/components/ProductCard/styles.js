@@ -55,6 +55,10 @@ export const Wrapper = styled.div`
     width: 17.6rem;
     height: 17.6rem;
     object-fit: contain;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   > h3 {
@@ -63,6 +67,17 @@ export const Wrapper = styled.div`
     font-weight: 700;
     line-height: 3.4rem;
     font-family: ${({ theme }) => theme.FF.secondary};
+
+    &:focus {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: 0.8;
+    }
   }
 
   > p {

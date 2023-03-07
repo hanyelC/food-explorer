@@ -11,7 +11,7 @@ import { api } from '../../services/api'
 
 import { Container, Wrapper } from './styles'
 
-export function ProductCard({ img, title, description, price }) {
+export function ProductCard({ id, img, title, description, price }) {
   const [quantity, setQuantity] = useState(1)
   const [favorite, setFavorite] = useState(false)
   const [imageUrl, setImageUrl] = useState(null)
@@ -43,6 +43,8 @@ export function ProductCard({ img, title, description, price }) {
     }
   }
 
+  const redirectToProductPage = () => navigate(`/product/${id}`)
+
   useEffect(() => {
     getImage()
 
@@ -63,8 +65,8 @@ export function ProductCard({ img, title, description, price }) {
         )}
 
         <Wrapper>
-          <img src={imageUrl} />
-          <h3>
+          <img src={imageUrl} onClick={redirectToProductPage} />
+          <h3 onClick={redirectToProductPage} tabIndex="0">
             {title} {'>'}
           </h3>
           <p>{description}</p>
