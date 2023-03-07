@@ -90,6 +90,10 @@ export const InputWrapper = styled.div`
     appearance: none;
     resize: none;
 
+    &:focus {
+      outline: #fff solid 1px;
+    }
+
     &::placeholder {
       color: ${({ theme }) => theme.colors.text.tertiary};
     }
