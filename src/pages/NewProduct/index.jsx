@@ -1,4 +1,5 @@
-import { FiUpload } from 'react-icons/fi'
+import { useState } from 'react'
+import { FiPlus, FiUpload, FiX } from 'react-icons/fi'
 
 import { BackButton } from '../../components/BackButton'
 import { Footer } from '../../components/Footer'
@@ -7,13 +8,32 @@ import { Header } from '../../components/Header'
 import {
   Container,
   Form,
+  Ingredient,
+  Ingredients,
   InputBackground,
   InputWrapper,
+  NewIngredient,
   SubmitButton,
   Wrapper,
 } from './styles'
 
 export function NewProduct() {
+  const [ingredients, setIngredients] = useState([])
+  const [newIngredientName, setNewIngredientName] = useState('')
+
+  const handleAddIngredient = () => {
+    if (ingredients.includes(newIngredientName)) {
+      setNewIngredientName('')
+      return
+    }
+    setIngredients((state) => [newIngredientName, ...state])
+    setNewIngredientName('')
+  }
+
+  const handleRemoveIngredient = (name) => {
+    setIngredients((state) => state.filter((item) => item !== name))
+  }
+
   return (
     <Container>
       <Header />
@@ -45,9 +65,30 @@ export function NewProduct() {
           <div>
             <InputWrapper htmlFor="">
               <label>Ingredientes</label>
-              <InputBackground>
-                <input type="text" />
-              </InputBackground>
+              <Ingredients>
+                {ingredients.map((name) => (
+                  <Ingredient key={name}>
+                    {name}
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveIngredient(name)}
+                    >
+                      <FiX />
+                    </button>
+                  </Ingredient>
+                ))}
+                <NewIngredient>
+                  <input
+                    type="text"
+                    placeholder="Adicionar"
+                    value={newIngredientName}
+                    onChange={(e) => setNewIngredientName(e.target.value)}
+                  />
+                  <button type="button" onClick={handleAddIngredient}>
+                    <FiPlus />
+                  </button>
+                </NewIngredient>
+              </Ingredients>
             </InputWrapper>
             <InputWrapper htmlFor="" style={{ maxWidth: '25.1rem' }}>
               <label>Preço</label>
