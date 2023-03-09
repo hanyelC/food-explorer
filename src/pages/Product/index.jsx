@@ -52,7 +52,6 @@ export function Product() {
       await getImage(data.image.image_name)
 
       setProductData(data)
-      console.log(data)
     } catch (error) {
       console.log(error)
     }
