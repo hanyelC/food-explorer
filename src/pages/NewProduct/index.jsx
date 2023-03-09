@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiPlus, FiUpload, FiX } from 'react-icons/fi'
+
+import { api } from '../../services/api'
 
 import { BackButton } from '../../components/BackButton'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
+import { Select } from '../../components/Select'
 
 import {
   Container,
@@ -20,6 +23,7 @@ import {
 export function NewProduct() {
   const [ingredients, setIngredients] = useState([])
   const [newIngredientName, setNewIngredientName] = useState('')
+  const [categories, setCategories] = useState([])
 
   const handleAddIngredient = () => {
     if (ingredients.includes(newIngredientName)) {
@@ -33,6 +37,17 @@ export function NewProduct() {
   const handleRemoveIngredient = (name) => {
     setIngredients((state) => state.filter((item) => item !== name))
   }
+
+  useEffect(() => {
+    api.get('/categories').then(({ data }) => {
+      const categories = data.categories.map(({ id, description }) => ({
+        value: id,
+        label: description,
+      }))
+
+      setCategories(categories)
+    })
+  }, [])
 
   return (
     <Container>
@@ -58,7 +73,11 @@ export function NewProduct() {
             <InputWrapper htmlFor="" style={{ maxWidth: '36.4rem' }}>
               <label>Categoria</label>
               <InputBackground>
-                <input type="text" />
+                <Select
+                  placeholder="Selecione uma categoria"
+                  onChange={(value) => console.log(value)}
+                  options={categories}
+                />
               </InputBackground>
             </InputWrapper>
           </div>
