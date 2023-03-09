@@ -25,6 +25,10 @@ export const Wrapper = styled.div`
   }
 `
 
+export const ErrorSpan = styled.span`
+  color: red;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
