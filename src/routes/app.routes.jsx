@@ -19,7 +19,10 @@ export function AppRoutes() {
       <Route path="/product/:id" element={<Product />} />
       {isAdmin && <Route path="/admin/new-product" element={<NewProduct />} />}
       {isAdmin && (
-        <Route path="/admin/edit-product" element={<EditProduct />} />
+        <Route
+          path="/admin/edit-product/:product_id"
+          element={<EditProduct />}
+        />
       )}
       <Route path="/*" element={<NotFound />} />
     </Routes>

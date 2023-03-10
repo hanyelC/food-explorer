@@ -78,6 +78,7 @@ export const ProductDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
+  flex: 1;
 
   & > div:first-child {
     display: flex;

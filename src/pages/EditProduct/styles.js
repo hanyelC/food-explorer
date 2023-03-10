@@ -25,6 +25,10 @@ export const Wrapper = styled.div`
   }
 `
 
+export const ErrorSpan = styled.span`
+  color: red;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -46,6 +50,48 @@ export const Form = styled.form`
       align-self: flex-end;
     }
   }
+`
+
+export const Ingredient = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  height: 3.2rem;
+
+  background-color: #76797b;
+
+  padding: 1rem 1.6rem;
+  border-radius: 8px;
+
+  color: #fff;
+  font-family: ${({ theme }) => theme.FF.primary};
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+
+    border-radius: 5px;
+  }
+`
+
+export const Ingredients = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  background-color: ${({ theme }) => theme.colors.BG.fifth};
+
+  padding: 0.8rem;
+
+  border-radius: 8px;
 `
 
 export const InputWrapper = styled.div`
@@ -120,6 +166,47 @@ export const InputBackground = styled.label`
 
     color: ${({ theme }) => theme.colors.text.primary};
     font-family: ${({ theme }) => theme.FF.primary};
+  }
+`
+
+export const NewIngredient = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  height: 3.2rem;
+
+  padding: 1rem 1.6rem;
+
+  border: 1px dashed #7c7c8a;
+  border-radius: 8px;
+
+  color: #fff;
+  font-family: ${({ theme }) => theme.FF.primary};
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+
+  &:focus-within {
+    border-style: solid;
+    border-color: #fff;
+  }
+
+  & > input {
+    background-color: transparent;
+    border: 0;
+  }
+
+  & > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    height: 2rem;
+    width: 2rem;
+
+    border-radius: 5px;
   }
 `
 

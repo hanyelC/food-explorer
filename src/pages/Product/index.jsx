@@ -43,7 +43,7 @@ export function Product() {
     setCounter((state) => (state < 99 ? state + 1 : state))
   }
 
-  const handleEditProduct = () => navigate('/admin/edit-product')
+  const handleEditProduct = () => navigate(`/admin/edit-product/${id}`)
 
   const getProductData = async () => {
     try {
@@ -52,7 +52,6 @@ export function Product() {
       await getImage(data.image.image_name)
 
       setProductData(data)
-      console.log(data)
     } catch (error) {
       console.log(error)
     }

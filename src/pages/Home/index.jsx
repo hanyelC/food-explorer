@@ -66,7 +66,7 @@ export function Home() {
           )
         )
       ) : (
-        <h1>Nada por aqui</h1>
+        <h1 style={{ flex: 1 }}>Nada por aqui</h1>
       )}
 
       <Footer />

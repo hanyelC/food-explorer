@@ -15,23 +15,11 @@ export function Slider({ products }) {
         450: {
           slidesPerView: 1.5,
         },
-        500: {
-          slidesPerView: 1.7,
-        },
-        600: {
-          slidesPerView: 2,
-        },
         750: {
           slidesPerView: 2.5,
         },
         900: {
-          slidesPerView: 3,
-        },
-        1050: {
-          slidesPerView: 3,
-        },
-        1200: {
-          slidesPerView: 3,
+          slidesPerView: 3.2,
         },
       }}
     >
