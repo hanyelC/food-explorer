@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import { FiPlus, FiUpload, FiX } from 'react-icons/fi'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
@@ -56,6 +58,8 @@ export function NewProduct() {
   const [newIngredientName, setNewIngredientName] = useState('')
   const [categories, setCategories] = useState([])
 
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -106,9 +110,14 @@ export function NewProduct() {
       await api.post('/products', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
+      navigate('/')
     } catch (error) {
       console.log(error)
-      alert('Algo de errado não está certo')
+      if (error?.response?.data?.message) {
+        alert(error?.response?.data?.message)
+      } else {
+        alert('Algo de errado não está certo')
+      }
     }
   })
 
