@@ -28,7 +28,7 @@ export function ProductCard({ id, img, title, description, price }) {
 
   const handleIncrease = () => setQuantity((prevState) => prevState + 1)
 
-  const handleUpdateProduct = () => navigate('/admin/edit-product')
+  const handleUpdateProduct = () => navigate(`/admin/edit-product/${id}`)
 
   const getImage = async () => {
     try {
