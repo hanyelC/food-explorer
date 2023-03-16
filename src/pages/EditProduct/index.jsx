@@ -191,7 +191,7 @@ export function EditProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.name ? (
                   <ErrorSpan>{errors.name.message}</ErrorSpan>
@@ -225,7 +225,7 @@ export function EditProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>Ingredientes</label>
               <Ingredients>
                 {ingredients &&
@@ -271,7 +271,7 @@ export function EditProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.description ? (
                   <ErrorSpan>{errors.description.message}</ErrorSpan>

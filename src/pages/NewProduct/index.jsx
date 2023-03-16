@@ -158,7 +158,7 @@ export function NewProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.name ? (
                   <ErrorSpan>{errors.name.message}</ErrorSpan>
@@ -174,7 +174,7 @@ export function NewProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.categoryId ? (
                   <ErrorSpan>{errors.categoryId.message}</ErrorSpan>
@@ -192,7 +192,7 @@ export function NewProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>Ingredientes</label>
               <Ingredients>
                 {ingredients.map((name) => (
@@ -219,7 +219,7 @@ export function NewProduct() {
                 </NewIngredient>
               </Ingredients>
             </InputWrapper>
-            <InputWrapper htmlFor="" >
+            <InputWrapper  >
               <label>
                 {errors.price ? (
                   <ErrorSpan>Preço é obrigatório</ErrorSpan>
@@ -237,7 +237,7 @@ export function NewProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.description ? (
                   <ErrorSpan>{errors.description.message}</ErrorSpan>
