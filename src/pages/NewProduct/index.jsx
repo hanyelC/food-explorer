@@ -231,6 +231,7 @@ export function NewProduct() {
                 <input
                   type="number"
                   placeholder={'R$ 00,00'}
+                  step="any"
                   {...register('price', { valueAsNumber: true })}
                 />
               </InputBackground>
