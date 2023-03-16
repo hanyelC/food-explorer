@@ -174,7 +174,7 @@ export function NewProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="" style={{ maxWidth: '36.4rem' }}>
+            <InputWrapper htmlFor="">
               <label>
                 {errors.categoryId ? (
                   <ErrorSpan>{errors.categoryId.message}</ErrorSpan>
@@ -219,7 +219,7 @@ export function NewProduct() {
                 </NewIngredient>
               </Ingredients>
             </InputWrapper>
-            <InputWrapper htmlFor="" style={{ maxWidth: '25.1rem' }}>
+            <InputWrapper htmlFor="" >
               <label>
                 {errors.price ? (
                   <ErrorSpan>Preço é obrigatório</ErrorSpan>
