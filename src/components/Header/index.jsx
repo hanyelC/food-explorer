@@ -11,7 +11,7 @@ import { Button } from '../Button'
 
 import { Container, Wrapper, Admin } from './styles'
 
-export function Header() {
+export function Header({ onSearchChange }) {
   const { signOut, user } = useAuth()
 
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ export function Header() {
 
         {!isAdmin && <button>Meus favoritos</button>}
 
-        <Input icon={FiSearch} placeholder="Busque pelas opções de pratos" />
+        <Input icon={FiSearch} placeholder="Busque pelas opções de pratos" onChange={onSearchChange} />
 
         {isAdmin ? (
           <Button onClick={handleCreateProduct}>Novo Prato</Button>
