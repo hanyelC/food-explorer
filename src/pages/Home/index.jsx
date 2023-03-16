@@ -38,7 +38,6 @@ export function Home() {
     try {
       const response = await api.get('/products', { params: { q: search }})
       setProducts(response.data)
-      console.log(response.data)
     } catch (err) {
       console.log(err.response)
       if (err.response.status === 401) {
