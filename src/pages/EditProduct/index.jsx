@@ -191,7 +191,7 @@ export function EditProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.name ? (
                   <ErrorSpan>{errors.name.message}</ErrorSpan>
@@ -207,7 +207,7 @@ export function EditProduct() {
                 />
               </InputBackground>
             </InputWrapper>
-            <InputWrapper htmlFor="" style={{ maxWidth: '36.4rem' }}>
+            <InputWrapper >
               <label>
                 {errors.categoryId ? (
                   <ErrorSpan>{errors.categoryId.message}</ErrorSpan>
@@ -225,7 +225,7 @@ export function EditProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>Ingredientes</label>
               <Ingredients>
                 {ingredients &&
@@ -253,7 +253,7 @@ export function EditProduct() {
                 </NewIngredient>
               </Ingredients>
             </InputWrapper>
-            <InputWrapper htmlFor="" style={{ maxWidth: '25.1rem' }}>
+            <InputWrapper >
               <label>
                 {errors.price ? (
                   <ErrorSpan>Preço é obrigatório</ErrorSpan>
@@ -271,7 +271,7 @@ export function EditProduct() {
             </InputWrapper>
           </div>
           <div>
-            <InputWrapper htmlFor="">
+            <InputWrapper >
               <label>
                 {errors.description ? (
                   <ErrorSpan>{errors.description.message}</ErrorSpan>

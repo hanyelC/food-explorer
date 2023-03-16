@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0 auto 1.6rem;
 
   & > h2 {
     font-family: ${({ theme }) => theme.FF.secondary};
@@ -22,6 +22,11 @@ export const Wrapper = styled.div`
     line-height: 1.4;
 
     margin-bottom: 3.2rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 768px;
+    padding: 0 5.6rem;
   }
 `
 
@@ -50,6 +55,10 @@ export const Actions = styled.div`
 
     &:disabled {
       background-color: ${({ theme }) => theme.colors.BG.btn.disabled};
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
     }
   }
 `
@@ -100,6 +109,14 @@ export const ProductDetails = styled.div`
       font-size: 2.4rem;
       line-height: 1.4;
     }
+
+    @media only screen and (max-width: 768px) {
+      & > h1,
+      & > p {
+        align-self: center;
+        text-justify: center;
+      }
+    }
   }
 `
 
@@ -113,5 +130,16 @@ export const ProductInfo = styled.div`
     height: 39rem;
     width: 39rem;
     object-fit: contain;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    & > img {
+      height: 26.4rem;
+      width: 26.4rem;
+      object-fit: contain;
+    }
   }
 `

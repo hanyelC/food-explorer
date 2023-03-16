@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 
   & > h2 {
     font-family: ${({ theme }) => theme.FF.secondary};
@@ -22,6 +22,10 @@ export const Wrapper = styled.div`
     line-height: 1.4;
 
     margin-bottom: 3.2rem;
+  }
+
+   @media only screen and (max-width: 768px) {
+    padding: 0 3.2rem;
   }
 `
 
@@ -42,12 +46,46 @@ export const Form = styled.form`
       & > div:first-child {
         width: fit-content;
         white-space: nowrap;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      & > div:last-child {
+        @media only screen and (min-width: 769px) {
+          max-width: 36.4rem;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      & > div:last-child {
+        @media only screen and (min-width: 769px) {
+          max-width: 25.1rem;
+        }
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
       }
     }
 
     &:last-child {
       width: fit-content;
       align-self: flex-end;
+
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        width: 100%;
+
+        & > button {
+          width: 100%;
+        }
+      }
     }
   }
 `

@@ -55,7 +55,7 @@ export function SignUp() {
           <label htmlFor="password">Senha</label>
           <input
             id="password"
-            type="text"
+            type="password"
             {...register('password')}
             placeholder={'No mínimo 6 caracteres'}
           />
@@ -65,7 +65,7 @@ export function SignUp() {
           <label htmlFor="passwordConfirm">Insira a senha mais uma vez</label>
           <input
             id="passwordConfirm"
-            type="text"
+            type="password"
             {...register('passwordConfirm')}
             placeholder={'No mínimo 6 caracteres'}
           />

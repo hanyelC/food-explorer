@@ -34,9 +34,9 @@ export function Home() {
     }
   }
 
-  async function getProducts() {
+  async function getProducts({ search } = { search: undefined }) {
     try {
-      const response = await api.get('/products')
+      const response = await api.get('/products', { params: { q: search }})
       setProducts(response.data)
     } catch (err) {
       console.log(err.response)
@@ -52,7 +52,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header />
+      <Header onSearchChange={(e) => getProducts({ search: e.target.value })} />
 
       <Banner />
       {products && Array.from(productsByCategory.values()).length > 0 ? (
