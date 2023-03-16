@@ -42,7 +42,7 @@ export function SignIn() {
           <label htmlFor="password">Senha</label>
           <input
             id="password"
-            type="text"
+            type="password"
             {...register('password')}
             placeholder={'No mínimo 6 caracteres'}
           />
